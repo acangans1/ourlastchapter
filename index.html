@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Last Chapter — 2024–2026</title>
+
+<meta name="description" content="Digital memory book — 2024–2026">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#060a12;
+    color:#fff;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#04070d;
+    z-index:99999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    transition:1s ease;
+}
+
+.loader-text{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    letter-spacing:5px;
+}
+
+.loader-sub{
+    margin-top:12px;
+    color:#666;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+.loader-bar{
+    width:170px;
+    height:1px;
+    background:#252b35;
+    margin-top:25px;
+    overflow:hidden;
+}
+
+.loader-bar span{
+    display:block;
+    width:100%;
+    height:100%;
+    background:#fff;
+    transform:translateX(-100%);
+    animation:load 1.5s ease forwards;
+}
+
+@keyframes load{
+    to{
+        transform:translateX(0);
+    }
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    padding:20px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:5000;
+
+    background:rgba(5,8,14,.55);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.logo{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#888;
+    font-size:10px;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:22px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(3,6,12,.48),
+            rgba(3,6,12,.92)
+        ),
+        url("images/class.jpg") center/cover;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            transparent 0,
+            rgba(0,0,0,.5) 80%
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:20px;
+}
+
+.hero-small{
+    color:#aaa;
+    font-size:10px;
+    letter-spacing:6px;
+    margin-bottom:28px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(58px,11vw,135px);
+    line-height:.85;
+    font-weight:500;
+    letter-spacing:-5px;
+}
+
+.hero h1 span{
+    color:#888;
+    font-style:italic;
+}
+
+.hero-desc{
+    margin-top:35px;
+    color:#aaa;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:38px;
+
+    padding:15px 26px;
+
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:50px;
+
+    text-decoration:none;
+    color:#fff;
+
+    font-size:10px;
+    letter-spacing:2px;
+
+    transition:.4s;
+}
+
+.hero-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.scroll-text{
+    position:absolute;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%);
+
+    color:#777;
+    font-size:9px;
+    letter-spacing:4px;
+
+    z-index:2;
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+section{
+    padding:130px 6%;
+}
+
+.container{
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-number{
+    color:#666;
+    font-size:10px;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(42px,6vw,78px);
+    font-weight:500;
+    line-height:.98;
+}
+
+.section-title i{
+    color:#777;
+}
+
+.section-desc{
+    max-width:650px;
+    color:#888;
+    line-height:1.9;
+    font-size:13px;
+    margin-top:25px;
+}
+
+.center{
+    text-align:center;
+}
+
+.center .section-desc{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro{
+    background:#080d17;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.intro-photo{
+    height:560px;
+
+    background:
+        linear-gradient(180deg,transparent,rgba(0,0,0,.7)),
+        url("images/story.jpg") center/cover;
+
+    position:relative;
+}
+
+.intro-photo-label{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+
+    color:#aaa;
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+    padding-top:60px;
+    padding-bottom:60px;
+    background:#050910;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid #1c222d;
+    border-bottom:1px solid #1c222d;
+}
+
+.stat{
+    padding:35px 20px;
+    text-align:center;
+    border-right:1px solid #1c222d;
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat-number{
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+}
+
+.stat-label{
+    color:#666;
+    font-size:9px;
+    letter-spacing:2px;
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline-section{
+    background:#060a12;
+}
+
+.timeline{
+    margin-top:80px;
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:#242b36;
+}
+
+.timeline-item{
+    width:50%;
+    padding:0 60px 90px;
+    position:relative;
+}
+
+.timeline-item:nth-child(even){
+    margin-left:50%;
+}
+
+.timeline-dot{
+    position:absolute;
+    top:5px;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#fff;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot{
+    right:-6px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot{
+    left:-5px;
+}
+
+.timeline-year{
+    color:#666;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.timeline-title{
+    font-family:'Playfair Display',serif;
+    font-size:35px;
+    margin:12px 0;
+}
+
+.timeline-text{
+    color:#888;
+    font-size:13px;
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery-section{
+    background:#080d17;
+}
+
+.gallery-filter{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:40px;
+}
+
+.filter-btn{
+    padding:10px 17px;
+
+    border:1px solid #252c37;
+    background:transparent;
+
+    color:#777;
+    border-radius:30px;
+
+    font-size:10px;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.gallery-grid{
+    margin-top:45px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.gallery-card{
+    height:280px;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+    background:#0e141f;
+}
+
+.gallery-card.large{
+    grid-row:span 2;
+    height:570px;
+}
+
+.gallery-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    filter:brightness(.72);
+
+    transition:.7s;
+}
+
+.gallery-card:hover img{
+    transform:scale(1.08);
+    filter:brightness(1);
+}
+
+.gallery-caption{
+    position:absolute;
+    left:15px;
+    bottom:15px;
+
+    font-size:9px;
+    letter-spacing:2px;
+
+    opacity:0;
+    transition:.4s;
+}
+
+.gallery-card:hover .gallery-caption{
+    opacity:1;
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.96);
+
+    z-index:10000;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:95%;
+    max-height:90vh;
+    object-fit:contain;
+}
+
+.lightbox-close{
+    position:absolute;
+    top:20px;
+    right:30px;
+
+    font-size:38px;
+    cursor:pointer;
+    color:#fff;
+}
+
+
+/* =====================================================
+   PEOPLE — 33 ORANG
+===================================================== */
+
+.people-section{
+    background:#060a12;
+}
+
+.people-grid{
+    margin-top:60px;
+
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.person{
+    background:#0c121d;
+    border:1px solid #18202c;
+
+    padding:9px;
+
+    transition:.4s;
+}
+
+.person:hover{
+    transform:translateY(-6px);
+    border-color:#444;
+}
+
+/* FOTO 4 × 6 */
+
+.person-photo{
+    width:100%;
+    aspect-ratio:4 / 6;
+    object-fit:cover;
+
+    display:block;
+
+    filter:grayscale(100%);
+    transition:.5s;
+}
+
+.person:hover .person-photo{
+    filter:grayscale(0);
+}
+
+.person-info{
+    padding:14px 5px 8px;
+}
+
+.person-name{
+    font-size:12px;
+    font-weight:600;
+}
+
+.person-role{
+    color:#666;
+    font-size:9px;
+    margin-top:6px;
+}
+
+
+/* =====================================================
+   ACTIVITIES
+===================================================== */
+
+.activities{
+    background:#080d17;
+}
+
+.activity-grid{
+    margin-top:60px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.activity{
+    min-height:270px;
+    padding:30px;
+
+    border:1px solid #1c2430;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.activity-number{
+    color:#444;
+    font-size:40px;
+    font-family:'Playfair Display',serif;
+}
+
+.activity h3{
+    margin-top:55px;
+    font-family:'Playfair Display',serif;
+    font-size:27px;
+}
+
+.activity p{
+    margin-top:12px;
+    color:#777;
+    line-height:1.7;
+    font-size:12px;
+}
+
+
+/* =====================================================
+   QUOTES
+===================================================== */
+
+.quotes{
+    background:#050910;
+}
+
+.quote-grid{
+    margin-top:60px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.quote{
+    min-height:250px;
+
+    padding:30px;
+
+    border:1px solid #1d2530;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.015);
+}
+
+.quote-text{
+    font-family:'Playfair Display',serif;
+    font-size:23px;
+    line-height:1.45;
+}
+
+.quote-author{
+    color:#555;
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter{
+    background:#080d17;
+    text-align:center;
+}
+
+.letter-box{
+    max-width:850px;
+    margin:65px auto 0;
+
+    padding:70px 35px;
+
+    border:1px solid #202733;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.005)
+        );
+}
+
+.letter-text{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(24px,4vw,42px);
+    line-height:1.5;
+}
+
+.signature{
+    color:#666;
+    font-size:9px;
+    letter-spacing:4px;
+    margin-top:35px;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(2,5,10,.6),
+            rgba(2,5,10,.94)
+        ),
+        url("images/final.jpg") center/cover;
+}
+
+.final-small{
+    color:#777;
+    font-size:10px;
+    letter-spacing:5px;
+}
+
+.final h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(60px,11vw,140px);
+    line-height:.85;
+    font-weight:500;
+    margin-top:25px;
+}
+
+.final h2 span{
+    color:#777;
+    font-style:italic;
+}
+
+.final-text{
+    color:#777;
+    margin-top:35px;
+    font-size:11px;
+    letter-spacing:4px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    padding:35px 6%;
+    background:#04070c;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:#555;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+.music-btn{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    background:rgba(8,12,20,.8);
+    border:1px solid #343b47;
+
+    color:#fff;
+
+    z-index:6000;
+    cursor:pointer;
+
+    backdrop-filter:blur(12px);
+}
+
+.music-btn.playing{
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        box-shadow:0 0 0 10px rgba(255,255,255,.04);
+    }
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+    section{
+        padding:100px 6%;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .intro-photo{
+        height:400px;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .stat:nth-child(1),
+    .stat:nth-child(2){
+        border-bottom:1px solid #1c222d;
+    }
+
+    .timeline::before{
+        left:8px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even){
+        width:100%;
+        margin-left:0;
+        padding-left:40px;
+        padding-right:0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot{
+        left:3px;
+        right:auto;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-card,
+    .gallery-card.large{
+        height:230px;
+        grid-row:span 1;
+    }
+
+    .people-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .activity-grid{
+        grid-template-columns:1fr;
+    }
+
+    .quote-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:550px){
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-3px;
+    }
+
+    .hero-small{
+        letter-spacing:4px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-number{
+        font-size:35px;
+    }
+
+    .gallery-grid{
+        gap:7px;
+    }
+
+    .gallery-card,
+    .gallery-card.large{
+        height:190px;
+    }
+
+    .people-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .person{
+        padding:7px;
+    }
+
+    .person-info{
+        padding:12px 4px 7px;
+    }
+
+    .person-name{
+        font-size:11px;
+    }
+
+    .person-role{
+        font-size:8px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<div id="loader">
+
+    <div class="loader-text">
+        OUR STORY
+    </div>
+
+    <div class="loader-sub">
+        2024 — 2026
+    </div>
+
+    <div class="loader-bar">
+        <span></span>
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        OUR LAST CHAPTER
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#story">STORY</a>
+        <a href="#memories">MEMORIES</a>
+        <a href="#people">PEOPLE</a>
+        <a href="#activities">ACTIVITIES</a>
+        <a href="#letters">LETTER</a>
+
+    </div>
+
+    <button class="menu-btn" onclick="scrollToMemories()">
+        ↓
+    </button>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            DIGITAL YEARBOOK
+        </div>
+
+        <h1>
+            WE WERE<br>
+            <span>HERE.</span>
+        </h1>
+
+        <div class="hero-desc">
+            2024 — 2026<br>
+            SMK · TKJ · ONE CLASS · ONE STORY
+        </div>
+
+        <a href="#story" class="hero-btn">
+            ENTER OUR STORY ↓
+        </a>
+
+    </div>
+
+    <div class="scroll-text">
+        SMK BHAKTI PERTIWI INDONESIA
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro" id="story">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="reveal">
+
+                <div class="section-number">
+                    01 — OUR STORY
+                </div>
+
+                <h2 class="section-title">
+                    It started<br>
+                    with <i>hello.</i>
+                </h2>
+
+                <p class="section-desc">
+
+                    Kita datang sebagai orang asing.
+
+                    <br><br>
+
+                    Wajah-wajah baru.
+                    Nama-nama yang belum kita kenal.
+                    Kursi-kursi yang belum punya cerita.
+
+                    <br><br>
+
+                    Tapi waktu berjalan.
+
+                    Kita mulai bercanda.
+                    Mulai saling membantu.
+                    Mulai membuat masalah kecil.
+                    Mulai menciptakan kenangan.
+
+                    <br><br>
+
+                    Sampai akhirnya kita sadar...
+
+                    <br><br>
+
+                    <strong>
+                        Kita bukan lagi sekadar satu kelas.
+                        Kita adalah sebuah cerita.
+                    </strong>
+
+                </p>
+
+            </div>
+
+
+            <div class="intro-photo reveal">
+
+                <div class="intro-photo-label">
+                    ONE CLASS · ONE STORY
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <div class="stat-number">3</div>
+                <div class="stat-label">YEARS TOGETHER</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">31</div>
+                <div class="stat-label">PEOPLE</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">1</div>
+                <div class="stat-label">CLASS</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">STORIES</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section class="timeline-section">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-number">
+                02 — OUR JOURNEY
+            </div>
+
+            <h2 class="section-title">
+                Three years.<br>
+                <i>Countless moments.</i>
+            </h2>
+
+            <p class="section-desc">
+                Dari hari pertama sampai halaman terakhir.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">2024</div>
+
+                <div class="timeline-title">
+                    First Chapter
+                </div>
+
+                <p class="timeline-text">
+                    Hari pertama sekolah.
+                    Masih canggung.
+                    Masih mencari teman.
+                    Masih bertanya-tanya siapa yang
+                    nantinya akan menjadi orang terdekat.
+                </p>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">2024</div>
+
+                <div class="timeline-title">
+                    First Memories
+                </div>
+
+                <p class="timeline-text">
+                    Mulai mengenal satu sama lain.
+                    Mulai punya candaan sendiri.
+                    Mulai ada foto-foto yang sekarang
+                    menjadi bagian dari kenangan.
+                </p>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">2025</div>
+
+                <div class="timeline-title">
+                    The Golden Days
+                </div>
+
+                <p class="timeline-text">
+                    Tugas, praktik, kegiatan,
+                    bercanda di kelas,
+                    makan bersama,
+                    sampai momen-momen random
+                    yang tidak pernah direncanakan.
+                </p>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">2025</div>
+
+                <div class="timeline-title">
+                    We Became Family
+                </div>
+
+                <p class="timeline-text">
+                    Kita sudah saling mengenal.
+                    Tahu sifat masing-masing.
+                    Tahu siapa yang paling berisik,
+                    siapa yang paling santai,
+                    dan siapa yang selalu datang terakhir.
+                </p>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">2026</div>
+
+                <div class="timeline-title">
+                    The Last Chapter
+                </div>
+
+                <p class="timeline-text">
+                    Hari-hari terakhir akhirnya tiba.
+
+                    <br><br>
+
+                    Yang dulu ingin cepat selesai,
+                    sekarang justru ingin diulang.
+                </p>
+            </div>
+
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-year">FOREVER</div>
+
+                <div class="timeline-title">
+                    The Memories Stay
+                </div>
+
+                <p class="timeline-text">
+                    Sekolah mungkin selesai.
+                    Tapi cerita kita tidak.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery-section" id="memories">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-number">
+                03 — MEMORY ARCHIVE
+            </div>
+
+            <h2 class="section-title">
+                Moments we<br>
+                <i>can't recreate.</i>
+            </h2>
+
+            <p class="section-desc">
+                Foto-foto yang mungkin terlihat sederhana,
+                tetapi menyimpan cerita yang hanya kita tahu.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-filter">
+
+            <button class="filter-btn active"
+                    onclick="filterGallery('all',this)">
+                ALL
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('school',this)">
+                SCHOOL
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('friends',this)">
+                FRIENDS
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterGallery('random',this)">
+                RANDOM
+            </button>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-card large reveal"
+                 data-category="school"
+                 onclick="openLightbox(this)">
+                <img src="images/memory1.jpg">
+                <div class="gallery-caption">MEMORY 01</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="friends"
+                 onclick="openLightbox(this)">
+                <img src="images/memory2.jpg">
+                <div class="gallery-caption">MEMORY 02</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="school"
+                 onclick="openLightbox(this)">
+                <img src="images/memory3.jpg">
+                <div class="gallery-caption">MEMORY 03</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="random"
+                 onclick="openLightbox(this)">
+                <img src="images/memory4.jpg">
+                <div class="gallery-caption">MEMORY 04</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="friends"
+                 onclick="openLightbox(this)">
+                <img src="images/memory5.jpg">
+                <div class="gallery-caption">MEMORY 05</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="school"
+                 onclick="openLightbox(this)">
+                <img src="images/memory6.jpg">
+                <div class="gallery-caption">MEMORY 06</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="random"
+                 onclick="openLightbox(this)">
+                <img src="images/memory7.jpg">
+                <div class="gallery-caption">MEMORY 07</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="friends"
+                 onclick="openLightbox(this)">
+                <img src="images/memory8.jpg">
+                <div class="gallery-caption">MEMORY 08</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="school"
+                 onclick="openLightbox(this)">
+                <img src="images/memory9.jpg">
+                <div class="gallery-caption">MEMORY 09</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="random"
+                 onclick="openLightbox(this)">
+                <img src="images/memory10.jpg">
+                <div class="gallery-caption">MEMORY 10</div>
+            </div>
+
+            <div class="gallery-card large reveal"
+                 data-category="friends"
+                 onclick="openLightbox(this)">
+                <img src="images/memory11.jpg">
+                <div class="gallery-caption">MEMORY 11</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="school"
+                 onclick="openLightbox(this)">
+                <img src="images/memory12.jpg">
+                <div class="gallery-caption">MEMORY 12</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="random"
+                 onclick="openLightbox(this)">
+                <img src="images/memory13.jpg">
+                <div class="gallery-caption">MEMORY 13</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="friends"
+                 onclick="openLightbox(this)">
+                <img src="images/memory14.jpg">
+                <div class="gallery-caption">MEMORY 14</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="school"
+                 onclick="openLightbox(this)">
+                <img src="images/memory15.jpg">
+                <div class="gallery-caption">MEMORY 15</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="random"
+                 onclick="openLightbox(this)">
+                <img src="images/memory16.jpg">
+                <div class="gallery-caption">MEMORY 16</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="friends"
+                 onclick="openLightbox(this)">
+                <img src="images/memory17.jpg">
+                <div class="gallery-caption">MEMORY 17</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="school"
+                 onclick="openLightbox(this)">
+                <img src="images/memory18.jpg">
+                <div class="gallery-caption">MEMORY 18</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="random"
+                 onclick="openLightbox(this)">
+                <img src="images/memory19.jpg">
+                <div class="gallery-caption">MEMORY 19</div>
+            </div>
+
+            <div class="gallery-card reveal"
+                 data-category="friends"
+                 onclick="openLightbox(this)">
+                <img src="images/memory20.jpg">
+                <div class="gallery-caption">MEMORY 20</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PEOPLE — 33 ORANG
+===================================================== -->
+
+<section class="people-section" id="people">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-number">
+                04 — THE PEOPLE
+            </div>
+
+            <h2 class="section-title">
+                The people<br>
+                <i>behind the story.</i>
+            </h2>
+
+            <p class="section-desc">
+                Karena sebuah kelas bukan hanya
+                tentang ruangan dan meja.
+
+                <br><br>
+
+                Kelas adalah tentang orang-orang
+                yang pernah duduk di dalamnya.
+            </p>
+
+        </div>
+
+
+        <div class="people-grid">
+
+
+            <!-- PERSON 01 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person1.jpg">
+                <div class="person-info">
+                    <div class="person-name">ADELIA</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 02 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person2.jpg">
+                <div class="person-info">
+                    <div class="person-name">AFRIELIANSYAH DZUHRI DARMA</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 03 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person3.jpg">
+                <div class="person-info">
+                    <div class="person-name">ARSHAL</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 04 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person4.jpg">
+                <div class="person-info">
+                    <div class="person-name">AULIA SAPITRI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 05 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person5.jpg">
+                <div class="person-info">
+                    <div class="person-name">CHANDRA RIZKI ADITIYA</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 06 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person6.jpg">
+                <div class="person-info">
+                    <div class="person-name">DESTA M.SARIF</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 07 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person7.jpg">
+                <div class="person-info">
+                    <div class="person-name">DHEA AYU SAFITRI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 08 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person8.jpg">
+                <div class="person-info">
+                    <div class="person-name">ELISA SELVIANI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 09 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person9.jpg">
+                <div class="person-info">
+                    <div class="person-name">FAZAR SODIK</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 10 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person10.jpg">
+                <div class="person-info">
+                    <div class="person-name">FIQRI MU'AFFA</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 11 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person11.jpg">
+                <div class="person-info">
+                    <div class="person-name">HELYA ROJAN HANDAYANI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 12 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person12.jpg">
+                <div class="person-info">
+                    <div class="person-name">M. ALVIN YUSUF</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 13 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person13.jpg">
+                <div class="person-info">
+                    <div class="person-name">M. FARHAN TRIYANSYAH</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 14 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person14.jpg">
+                <div class="person-info">
+                    <div class="person-name">M. PRANAJA SATYA RAHADI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 15 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person15.jpg">
+                <div class="person-info">
+                    <div class="person-name">M. RIFKI RAMADHAN</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 16 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person16.jpg">
+                <div class="person-info">
+                    <div class="person-name">MANDA DWI AGUSTIN</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 17 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person17.jpg">
+                <div class="person-info">
+                    <div class="person-name">MUHAMAD REFI TRI ARDIANSYAH</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 18 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person18.jpg">
+                <div class="person-info">
+                    <div class="person-name">MUHAMAD SAHRUL</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 19 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person19.jpg">
+                <div class="person-info">
+                    <div class="person-name">MUHAMMAD ZIKRI APRILIA</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 20 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person20.jpg">
+                <div class="person-info">
+                    <div class="person-name">NADIA AMANDA</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 21 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person21.jpg">
+                <div class="person-info">
+                    <div class="person-name">NATASYA AYU KIRANA</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 22 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person22.jpg">
+                <div class="person-info">
+                    <div class="person-name">PIRMANSYAH</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 23 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person23.jpg">
+                <div class="person-info">
+                    <div class="person-name">RAHMA RAMADANI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 24 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person24.jpg">
+                <div class="person-info">
+                    <div class="person-name">REYHAN ROHIMAN FIRDAUS</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 25 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person25.jpg">
+                <div class="person-info">
+                    <div class="person-name">RIANI SAPITRI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 26 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person26.jpg">
+                <div class="person-info">
+                    <div class="person-name">RIPKI HARDIANSYAH</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 27 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person27.jpg">
+                <div class="person-info">
+                    <div class="person-name">RISMA PEBRIANTI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 28 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person28.jpg">
+                <div class="person-info">
+                    <div class="person-name">ROBY ANDINI ANDRIANSYAH</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 29 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person29.jpg">
+                <div class="person-info">
+                    <div class="person-name">SAEPUL ALAM</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 30 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person30.jpg">
+                <div class="person-info">
+                    <div class="person-name">SITI JULIYANTI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+
+            <!-- PERSON 31 -->
+            <div class="person reveal">
+                <img class="person-photo" src="images/person31.jpg">
+                <div class="person-info">
+                    <div class="person-name">SRI RAHMAWATI</div>
+                    <div class="person-role">TKJ · 2024–2026</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACTIVITIES
+===================================================== -->
+
+<section class="activities" id="activities">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-number">
+                05 — WHAT WE DID
+            </div>
+
+            <h2 class="section-title">
+                More than<br>
+                <i>just school.</i>
+            </h2>
+
+            <p class="section-desc">
+                Semua kegiatan yang membuat masa sekolah
+                terasa lebih dari sekadar belajar di kelas.
+            </p>
+
+        </div>
+
+
+        <div class="activity-grid">
+
+            <div class="activity reveal">
+                <div class="activity-number">01</div>
+
+                <h3>Praktik</h3>
+
+                <p>
+                    Belajar, mencoba, gagal,
+                    memperbaiki, dan mencoba lagi.
+                </p>
+            </div>
+
+
+            <div class="activity reveal">
+                <div class="activity-number">02</div>
+
+                <h3>Kegiatan Kelas</h3>
+
+                <p>
+                    Acara sekolah, tugas kelompok,
+                    kegiatan bersama, dan momen
+                    yang tidak pernah direncanakan.
+                </p>
+            </div>
+
+
+            <div class="activity reveal">
+                <div class="activity-number">03</div>
+
+                <h3>PKL</h3>
+
+                <p>
+                    Saat kita mulai merasakan
+                    bagaimana dunia kerja sebenarnya.
+                </p>
+            </div>
+
+
+            <div class="activity reveal">
+                <div class="activity-number">04</div>
+
+                <h3>Nongkrong</h3>
+
+                <p>
+                    Tidak harus mahal.
+                    Yang penting bersama.
+                </p>
+            </div>
+
+
+            <div class="activity reveal">
+                <div class="activity-number">05</div>
+
+                <h3>Random Moments</h3>
+
+                <p>
+                    Momen-momen tidak penting
+                    yang justru paling kita ingat.
+                </p>
+            </div>
+
+
+            <div class="activity reveal">
+                <div class="activity-number">06</div>
+
+                <h3>Last Day</h3>
+
+                <p>
+                    Hari yang akhirnya membuat kita
+                    sadar bahwa semuanya benar-benar selesai.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUOTES
+===================================================== -->
+
+<section class="quotes">
+
+    <div class="container">
+
+        <div class="center reveal">
+
+            <div class="section-number">
+                06 — THINGS WE SAID
+            </div>
+
+            <h2 class="section-title">
+                Words we'll<br>
+                <i>never forget.</i>
+            </h2>
+
+        </div>
+
+
+        <div class="quote-grid">
+
+            <div class="quote reveal">
+
+                <div class="quote-text">
+                    "Yang penting kumpul,
+                    urusan tugas belakangan."
+                </div>
+
+                <div class="quote-author">
+                    THE CLASS
+                </div>
+
+            </div>
+
+
+            <div class="quote reveal">
+
+                <div class="quote-text">
+                    "Besok masuk nggak?"
+                </div>
+
+                <div class="quote-author">
+                    EVERY MORNING
+                </div>
+
+            </div>
+
+
+            <div class="quote reveal">
+
+                <div class="quote-text">
+                    "Foto dulu sebelum pulang."
+                </div>
+
+                <div class="quote-author">
+                    ONE LAST TIME
+                </div>
+
+            </div>
+
+
+            <div class="quote reveal">
+
+                <div class="quote-text">
+                    "Nanti kita ketemu lagi."
+                </div>
+
+                <div class="quote-author">
+                    2026
+                </div>
+
+            </div>
+
+
+            <div class="quote reveal">
+
+                <div class="quote-text">
+                    "Lima menit lagi..."
+                </div>
+
+                <div class="quote-author">
+                    WHICH BECAME ONE HOUR
+                </div>
+
+            </div>
+
+
+            <div class="quote reveal">
+
+                <div class="quote-text">
+                    "Jangan lupa kita."
+                </div>
+
+                <div class="quote-author">
+                    THE LAST DAY
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section class="letter" id="letters">
+
+    <div class="container">
+
+        <div class="center reveal">
+
+            <div class="section-number">
+                07 — LETTER TO FUTURE US
+            </div>
+
+            <h2 class="section-title">
+                Dear <i>future us,</i>
+            </h2>
+
+        </div>
+
+
+        <div class="letter-box reveal">
+
+            <div class="letter-text">
+
+                Kalau suatu hari nanti
+                kita membuka website ini lagi,
+                semoga kita masih bisa tersenyum.
+
+                <br><br>
+
+                Ingatlah bahwa kita pernah
+                duduk di ruangan yang sama,
+                tertawa pada hal-hal kecil,
+                mengeluh tentang tugas,
+                dan bermimpi tentang masa depan.
+
+                <br><br>
+
+                Mungkin nanti kita akan
+                berjalan ke arah yang berbeda.
+
+                <br><br>
+
+                Tapi jangan pernah lupa...
+
+                <br><br>
+
+                <i>
+                    Kita pernah menjadi
+                    satu cerita.
+                </i>
+
+            </div>
+
+            <div class="signature">
+                FROM US · 2026
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+    <div>
+
+        <div class="final-small">
+            THE END OF A CHAPTER
+        </div>
+
+        <h2>
+            THE CLASS<br>
+            <span>ENDS.</span>
+        </h2>
+
+        <div class="final-text">
+            THE MEMORIES DON'T.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div>
+        OUR LAST CHAPTER
+    </div>
+
+    <div>
+        2024 — 2026
+    </div>
+
+    <div>
+        MADE WITH MEMORIES
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div class="lightbox" id="lightbox">
+
+    <div class="lightbox-close"
+         onclick="closeLightbox()">
+        ×
+    </div>
+
+    <img id="lightboxImage">
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button
+    class="music-btn"
+    id="musicBtn"
+    onclick="toggleMusic()">
+    ♪
+</button>
+
+
+<script>
+
+/* =====================================================
+   LOADER
+===================================================== */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        const loader =
+            document.getElementById("loader");
+
+        loader.style.opacity="0";
+
+        setTimeout(function(){
+
+            loader.style.display="none";
+
+        },1000);
+
+    },1500);
+
+});
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+function checkReveal(){
+
+    reveals.forEach(function(element){
+
+        const top =
+            element.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 70){
+
+            element.classList.add("show");
+
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    checkReveal
+);
+
+checkReveal();
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+function openLightbox(card){
+
+    const image =
+        card.querySelector("img");
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+    lightboxImage.src =
+        image.src;
+
+    lightbox.classList.add("active");
+
+}
+
+function closeLightbox(){
+
+    document
+        .getElementById("lightbox")
+        .classList.remove("active");
+
+}
+
+document
+    .getElementById("lightbox")
+    .addEventListener("click",function(event){
+
+        if(event.target === this){
+
+            closeLightbox();
+
+        }
+
+    });
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   GALLERY FILTER
+===================================================== */
+
+function filterGallery(category,button){
+
+    const cards =
+        document.querySelectorAll(".gallery-card");
+
+    const buttons =
+        document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+
+    cards.forEach(function(card){
+
+        if(
+            category === "all" ||
+            card.dataset.category === category
+        ){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+let musicPlaying=false;
+
+function toggleMusic(){
+
+    if(!musicPlaying){
+
+        music.play()
+        .then(function(){
+
+            musicPlaying=true;
+
+            musicBtn.innerHTML="Ⅱ";
+
+            musicBtn.classList.add("playing");
+
+        })
+        .catch(function(){
+
+            alert(
+                "Tambahkan file music.mp3 ke folder utama website."
+            );
+
+        });
+
+    }else{
+
+        music.pause();
+
+        musicPlaying=false;
+
+        musicBtn.innerHTML="♪";
+
+        musicBtn.classList.remove("playing");
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE NAV BUTTON
+===================================================== */
+
+function scrollToMemories(){
+
+    document
+        .getElementById("memories")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+</script>
+
+</body>
+  </html>
